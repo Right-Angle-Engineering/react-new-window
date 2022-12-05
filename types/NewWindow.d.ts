@@ -11,8 +11,8 @@ declare module 'react-new-window' {
    * @remarks These will be concatenated into a string for window.open.
    */
   export interface IWindowFeatures {
-    height: number
-    width: number
+    height?: number
+    width?: number
     [i: string]: boolean | number | string
   }
 
@@ -71,6 +71,11 @@ declare module 'react-new-window' {
      * If specified, copy styles from parent window's document.
      */
     copyStyles?: boolean
+    
+    /**
+     * If specified, close the new window on unmount.
+     */
+    closeOnUnmount?: boolean
   }
 
   export default class NewWindow extends React.PureComponent<INewWindowProps> {
